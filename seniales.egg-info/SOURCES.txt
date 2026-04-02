@@ -1,8 +1,0 @@
-README.md
-setup.py
-seniales/__init__.py
-seniales/generacion_señales.py
-seniales.egg-info/PKG-INFO
-seniales.egg-info/SOURCES.txt
-seniales.egg-info/dependency_links.txt
-seniales.egg-info/top_level.txt
