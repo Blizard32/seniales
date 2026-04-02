@@ -1,2 +1,0 @@
-from generacion_señales import crear_cajon
-from generacion_señales import new_time_dim
