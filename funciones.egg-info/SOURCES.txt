@@ -1,0 +1,8 @@
+README.md
+setup.py
+funciones/__init__.py
+funciones/generacion_señales.py
+funciones.egg-info/PKG-INFO
+funciones.egg-info/SOURCES.txt
+funciones.egg-info/dependency_links.txt
+funciones.egg-info/top_level.txt
