@@ -18,6 +18,6 @@ Se instalará las dependencias **build**, luego se obtendrán los requerimientos
 
 Si se modificaron las funciones (en la librería local o global), se puede reinstalar la librería con el siguiente comando:
 
-```cmd 
+```c
 pip install --upgrade --force-reinstall git+https://github.com/Blizard32/seniales.git
 ```
