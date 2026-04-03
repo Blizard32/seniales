@@ -1,6 +1,7 @@
 README.md
 setup.py
 seniales/__init__.py
+seniales/funciones.py
 seniales/operaciones.py
 seniales/signals.py
 seniales.egg-info/PKG-INFO

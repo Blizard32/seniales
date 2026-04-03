@@ -13,7 +13,7 @@ def cajon(t, t0=0.0, ancho=1.0, amplitud=1.0):
     Returns:
         array: Valores del cajón en base al tiempo
     """
-    return np.where((t >= t0) & (t <= t0 + ancho), amplitud, 0.0)
+    return np.where((t >= t0 - ancho/2) & (t <= t0 + ancho/2), amplitud, 0.0)
 
 
 def triangulo(t, t0=0.0, ancho=2.0, amplitud=1.0):
@@ -29,11 +29,10 @@ def triangulo(t, t0=0.0, ancho=2.0, amplitud=1.0):
         array: Valores del triangulo en base al tiempo
     """
     x = cajon(t, t0, ancho/2, amplitud)
-    return np.convolve(x, x, 'full')
+    return np.convolve(x, x, 'full') * (t[1] - t[0])
 
-# ------------------------------------------------------------------------
-# ----------------- Cambiar dominio temporal de una señial ---------------
-# ------------------------------------------------------------------------
+
+
 
 # --------------- Calcular la nueva dimensión temporal -------------------
 def new_time_dim(t, signal, escala = 1):
