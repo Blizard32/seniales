@@ -1,7 +1,9 @@
 from .signals import cajon
 from .signals import triangulo
-from .signals import new_time_dim
 
 from .operaciones import correlacion
+from .operaciones import convolucion
+from .operaciones import tiempo
+from .operaciones import dominio_temporal
 
 from .funciones import graficar_seniales

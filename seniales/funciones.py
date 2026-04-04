@@ -1,6 +1,6 @@
 import random
 import matplotlib.pyplot as plt
-from signals import new_time_dim
+from operaciones import dominio_temporal
 
 
 def graficar_seniales(seniales, t, nombres, random_colors = True, window_lenght = 10, window_height = 2):
@@ -19,7 +19,7 @@ def graficar_seniales(seniales, t, nombres, random_colors = True, window_lenght 
     colors = ["blue", "red", "green", "orange", "purple", "brown", "gray", "olive", "cyan"]
 
     for i in range(N):
-        dim_t = new_time_dim(t, seniales[i])
+        dim_t = dominio_temporal(t, seniales[i])
         if random_colors:
             axs[i].plot(dim_t, seniales[i], color=colors[random.randint(0, len(colors)-1)])
         else:
