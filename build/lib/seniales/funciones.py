@@ -1,6 +1,6 @@
 import random
 import matplotlib.pyplot as plt
-from operaciones import dominio_temporal
+from .operaciones import dominio_temporal
 
 
 def graficar_seniales(seniales, t, nombres, random_colors = True, window_lenght = 10, window_height = 2):
