@@ -20,13 +20,14 @@ def convolucion(x, y, dt):
     return np.convolve(x, y, mode='full') * dt
 
 
-def tiempo(inicio, fin, particiones = 1000):
+# Sobrecarga de tiempo con la cantidad de particiones necesarias.
+def tiempo(inicio, fin, particiones):
     """ Genera un vector de tiempo con el intervalo y cantidad de particiones dadas.
 
     Args:
         inicio (float): Es el tiempo inicial del vector
         fin (float): Es el tiempo final del vector
-        particiones (int, optional): Es la cantidad de puntos que se quieren generar. Defaults to 1000.
+        particiones (int): Es la cantidad de puntos que se quieren generar.
 
     Returns:
         vector: Vector de tiempo generado.
@@ -35,6 +36,23 @@ def tiempo(inicio, fin, particiones = 1000):
     t_vector = np.linspace(inicio, fin, particiones)
     dt = t_vector[1] - t_vector[0]
     return t_vector, dt
+
+
+def tiempo(inicio, fin, tipo="continuo"):
+    """ Genera un vector de tipo continuo o discreto. Se genera por defecto un tipo continuo con 1000 particiones
+
+    Args:
+        inicio (int/float): Es el tiempo inicial del vector (int: discreto, float: continuo)
+        fin (int/float): Es el tiempo final del vector (int: discreto, float: continuo)
+        tipo (str, optional): Es el tipo de vector a generar, puede ser "continuo" o "discreto". Defaults to "continuo".
+
+    Returns:
+        vector: Vector de tiempo generado.
+    """
+    if tipo == "continuo":
+        return tiempo(inicio, fin, 1000)
+    if tipo == "discreto":
+        return np.arange(inicio, fin, 1)
 
 
 # --------------- Calcular la nueva dimensión temporal -------------------

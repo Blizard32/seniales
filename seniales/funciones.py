@@ -1,5 +1,6 @@
 import random
 import matplotlib.pyplot as plt
+import numpy as np
 from .operaciones import dominio_temporal
 
 
@@ -18,15 +19,27 @@ def graficar_seniales(seniales, t, nombres, random_colors = True, window_lenght 
     fig, axs = plt.subplots(N, 1, figsize=(window_lenght, window_height * N))
     colors = ["blue", "red", "green", "orange", "purple", "brown", "gray", "olive", "cyan"]
 
+    # En un futuro hacer que si N es muy grande, se generen varias ventanas con 3 subplots cada una, para evitar que se amontonen las señales en una sola ventana.
+    
     for i in range(N):
-        dim_t = dominio_temporal(t, seniales[i])
-        if random_colors:
-            axs[i].plot(dim_t, seniales[i], color=colors[random.randint(0, len(colors)-1)])
+        if (t[1] - t[0] == 1):
+            # Si la dimensión temporal es igual a 1, se asume que es una señal continua y se grafica con líneas.
+            dim_t = np.arange(t[0], t[0] + len(seniales[i]), 1)  # Se genera una dimensión temporal en base al tamaño de la señal
+            if random_colors:
+                axs[i].stem(dim_t, seniales[i])
+            else:
+                axs[i].stem(dim_t, seniales[i])
+            axs[i].set_title(nombres[i])
+            axs[i].grid()
         else:
-            axs[i].plot(dim_t, seniales[i], color=colors[i % len(colors)])
-        axs[i].set_title(nombres[i])
-        axs[i].grid()
-
+            # Si la dimensión temporal es menor a 1, se asume que es una señal discreta y se grafica con marcadores.
+            dim_t = dominio_temporal(t, seniales[i])
+            if random_colors:
+                axs[i].plot(dim_t, seniales[i], color=colors[random.randint(0, len(colors)-1)])
+            else:
+                axs[i].plot(dim_t, seniales[i], color=colors[i % len(colors)])
+            axs[i].set_title(nombres[i])
+            axs[i].grid()
 
     plt.tight_layout()
     plt.show()
