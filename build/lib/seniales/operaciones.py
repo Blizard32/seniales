@@ -51,6 +51,6 @@ def dominio_temporal(t, signal, escala = 1):
     """
     # Si len(señal) = len(tiempo) * N - (N-1)    -->    N = (len(señal)-1) / (len(tiempo)-1)
     N = ((len(signal)-1)/(len(t)-1)) * escala
-    t_conv = tiempo(t[0] * N, t[-1] * N, int(len(signal))*N)
+    t_conv, _ = tiempo(t[0] * N, t[-1] * N, int(len(signal)))
     return t_conv
 # ----------------------------------------------------------------------
