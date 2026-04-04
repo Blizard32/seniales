@@ -5,8 +5,8 @@ Este es un repositorio que tiene las características para generar una librería
 El objetivo es que estudiantes puedan utilizar con más facilidad las funciones para generar señales y con una explicación detallada de las acciones realizadas en cada funcion de la librería. 
 La librería es modificable, lo que quiere decir que va a ir creciendo con nuevas funciones si es que estas se encuentran útilies para facilitar la programación de analisis de señales.
 
----
 
+---
 ## Cómo instalar la librería
 Se utilizq el siguente comando en la terimal para instalar por primera vez la librería que encuentra en github:
 ```cmd
