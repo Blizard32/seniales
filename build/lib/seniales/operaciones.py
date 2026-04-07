@@ -8,15 +8,29 @@ import numpy as np
 def correlacion(x, y, dt):
     """ Realiza la correlacion entre x e y.<p>
         Se utiliza la propiedad hayada en el punto 9.4.<p>
-        Correlación usando definición: x * y(-t) """
+        Correlación usando definición: x * y(-t) 
+        
+        Args:
+            x (vector): Es la señal x.
+            y (vector): Es la señal y.
+            dt (float): Es el diferencial de tiempo entre cada punto del vector temporal.
+        Returns:
+            vector: x(t) ∗ y(-t)
+        """
     y_inv = y[::-1]  # invertir señal
     return np.convolve(x, y_inv, mode='full') * dt
 
 
 def convolucion(x, y, dt):
-    """ Realiza la convolución entre x e y.<p>
-        Se utiliza la propiedad hayada en el punto 9.4.<p>
-        Convolución usando definición: x * y(t) """
+    """Realiza la convolución entre x e y.<p>
+    
+    Args:
+            x (vector): Es la señal x.
+            y (vector): Es la señal y.
+            dt (float): Es el diferencial de tiempo entre cada punto del vector temporal.
+    Returns:
+        vector: x(t) ∗ y(t)
+    """
     return np.convolve(x, y, mode='full') * dt
 
 
