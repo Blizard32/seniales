@@ -4,7 +4,8 @@ import sys
 import os
 
 def run_tests():
-    test_dir = os.path.join(os.path.dirname(__file__), "test")
+    # Ruta correcta al directorio de tests
+    test_dir = os.path.join(os.path.dirname(__file__), "..", "test")
     test_files = [f for f in os.listdir(test_dir) if f.startswith("test_") and f.endswith(".py")]
     
     for test_file in test_files:

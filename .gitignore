@@ -1,1 +1,16 @@
-.aider*
+# Directorios a ignorar
+build/
+dist/
+seniales/test/
+
+# Archivos generados por Python
+.pyc
+__pycache__/
+*.egg-info/
+*.tar.gz
+*.whl
+
+# Otras exclusiones
+*.log
+*.swp
+*.swo
