@@ -1,0 +1,2 @@
+git commit -m "feat: add tests, update README.md, and configure .gitignore"
+git push origin main

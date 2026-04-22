@@ -3,7 +3,7 @@ import numpy as np
 from seniales.funciones import graficar_seniales
 
 def test_graficar_seniales():
-    """Verificar que la función graficar_seniales no lance errores"""
+    """Verificar que la función graficar_sen nadie lance errores"""
     t = np.linspace(-1, 1, 100)
     signal1 = np.sin(2*np.pi*t)
     signal2 = np.cos(2*np.pi*t)

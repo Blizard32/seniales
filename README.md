@@ -21,10 +21,15 @@ El directorio contiene un proyecto de desarrollo de software en Python destinado
 
 3. **`build/` y `dist/`**: Artefactos de construcción (wheel y tar.gz) para la distribución del proyecto.
 
+## Tests implementados
+- **`test_signals.py`**: Verifica que las funciones de generación de señales (cajon, triangulo) funcionen correctamente.
+- **`test_operations.py`**: Verifica que las operaciones matemáticas (correlación, convolución) funcionen correctamente.
+- **`test_plotting.py`**: Verifica que la función de graficación no lance errores.
+- **`RunTests.py`**: Script para ejecutar todos los tests de forma centralizada.
+
 ## Mejoras sugeridas
 - Añadir documentación detallada para cada función.
 - Expandir el soporte para más tipos de señales (seno, exponenciales, etc.).
 - Mejorar la interactividad de las gráficas (animaciones, exportación a archivos).
 
 ¿Desea modificar el README.md para actualizar la descripción del proyecto o mejorar la documentación?
-
